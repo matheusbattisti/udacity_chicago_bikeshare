@@ -287,6 +287,11 @@ input("Aperte Enter para continuar...")
 # TODO: Verifique quantos tipos de start_stations nós temos, usando set()
 user_types = set()
 
+startstations_to_list = column_to_list(data_list, 3)
+
+for i in range(len(startstations_to_list)):
+  user_types.add(startstations_to_list[i])
+
 print("\nTAREFA 10: Imprimindo as start stations:")
 print(len(user_types))
 print(user_types)
@@ -314,11 +319,39 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar tipos de usuários, sem definir os tipos
 # para que nós possamos usar essa função com outra categoria de dados.
 print("Você vai encarar o desafio? (yes ou no)")
-answer = "no"
+answer = "yes"
 
 def count_items(column_list):
     item_types = []
     count_items = []
+
+    for i in range(len(column_list)):
+
+      print(len(item_types))
+      print(item_types)
+
+      if(len(item_types) == 0):
+        item_types.append(column_list[i])
+      else:
+        for i in range(len(item_types)):
+          append_or_not = 0
+          if(item_types[i] == column_list[i]):
+            append_or_not += 1
+
+        if(append_or_not == 0):
+          item_types.append(column_list[i])
+
+      for i in range(len(item_types)):
+        print(item_types)
+        if(len(count_items) == 0):
+          count_items.append(1)
+        elif(item_types[i] == column_list[i]):
+          print(i)
+          count_items[i] = count_items[i] + 1
+
+
+    print(item_types)
+
     return item_types, count_items
 
 
