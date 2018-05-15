@@ -71,7 +71,9 @@ input("Aperte Enter para continuar...")
   args:
     data -> é a lista em si
     index -> é o indice da coluna que vamos transformar em lista
-    output -> uma lista
+
+  output:
+    uma lista com a coluna
 '''
 def column_to_list(data, index):
     column_list = []
@@ -127,7 +129,9 @@ input("Aperte Enter para continuar...")
   Função para contar os generos do dataset
   args:
     data_list -> é a lista em si
-    output -> male (int), female (int) contagem de cada um dos generos
+
+  output:
+    male (int), female (int) contagem de cada um dos generos
 '''
 def count_gender(data_list):
     male = 0
@@ -161,7 +165,9 @@ input("Aperte Enter para continuar...")
   Função para ver qual o genero mais popular
   args:
     data_list -> é a lista em si
-    output -> string que mostra qual genero foi o mais populado, ou se são iguais
+
+  output:
+    string que mostra qual genero foi o mais populado, ou se são iguais
 '''
 def most_popular_gender(data_list):
 
@@ -252,7 +258,9 @@ median_trip = 0.
   Função para calcular a menor viagem, maior viagem, media e mediana das viagens
   args:
     trip_duration_list -> é a lista em si
-    output -> não ha saida de dados, muda as variaveis que são globais
+  
+  output:
+    não ha saida de dados, muda as variaveis que são globais
 '''
 def trip_duration(trip_duration_list):
 
@@ -346,36 +354,25 @@ input("Aperte Enter para continuar...")
 print("Você vai encarar o desafio? (yes ou no)")
 answer = "yes"
 
+'''
+  Função para definir os indices de uma coluna, e contar a ocorrẽncia de cada um deles
+  args:
+    column_list -> é a lista em si
+  
+  output: 
+    item_types -> list que informa os indices existentes na coluna,
+    count_itens -> conta a quantidade de cada item
+'''
 def count_items(column_list):
-    item_types = []
+    item_types = list(set(column_list))
     count_items = []
 
-    for i in range(len(column_list)):
-
-      print(len(item_types))
-      print(item_types)
-
-      if(len(item_types) == 0):
-        item_types.append(column_list[i])
-      else:
-        for i in range(len(item_types)):
-          append_or_not = 0
-          if(item_types[i] == column_list[i]):
-            append_or_not += 1
-
-        if(append_or_not == 0):
-          item_types.append(column_list[i])
-
-      for i in range(len(item_types)):
-        print(item_types)
-        if(len(count_items) == 0):
-          count_items.append(1)
-        elif(item_types[i] == column_list[i]):
-          print(i)
-          count_items[i] = count_items[i] + 1
-
-
-    print(item_types)
+    for i in range(len(item_types)):
+      count = 0
+      for j in range(len(column_list)):        
+        if(item_types[i] == column_list[j]):
+          count += 1
+      count_items.append(count)
 
     return item_types, count_items
 
