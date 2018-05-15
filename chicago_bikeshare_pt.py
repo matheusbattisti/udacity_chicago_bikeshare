@@ -66,6 +66,13 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 
 #SOLUCAO TAREFA 3: Função coluna como lista
+'''
+  Função para transformar uma coluna em lista
+  args:
+    data -> é a lista em si
+    index -> é o indice da coluna que vamos transformar em lista
+    output -> uma lista
+'''
 def column_to_list(data, index):
     column_list = []
     # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
@@ -116,6 +123,12 @@ input("Aperte Enter para continuar...")
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 
 #SOLUCAO TAREFA 5: Função male e female
+'''
+  Função para contar os generos do dataset
+  args:
+    data_list -> é a lista em si
+    output -> male (int), female (int) contagem de cada um dos generos
+'''
 def count_gender(data_list):
     male = 0
     female = 0
@@ -144,6 +157,12 @@ input("Aperte Enter para continuar...")
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 
 #SOLUCAO TAREFA 6: Função genero mais popular
+'''
+  Função para ver qual o genero mais popular
+  args:
+    data_list -> é a lista em si
+    output -> string que mostra qual genero foi o mais populado, ou se são iguais
+'''
 def most_popular_gender(data_list):
 
     answer = ""
@@ -229,6 +248,12 @@ mean_trip = 0.
 median_trip = 0.
 
 #SOLUCAO TAREFA 9: Função para calculos duracao da viagem
+'''
+  Função para calcular a menor viagem, maior viagem, media e mediana das viagens
+  args:
+    trip_duration_list -> é a lista em si
+    output -> não ha saida de dados, muda as variaveis que são globais
+'''
 def trip_duration(trip_duration_list):
 
   global min_trip
